@@ -14,7 +14,6 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'sudo usermod -aG docker $USER && newgrp docker'
         sh 'docker build -t wesjohnsondoc/flask_app .'
       }
     }
