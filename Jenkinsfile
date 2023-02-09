@@ -30,5 +30,19 @@ pipeline {
       }
     }
 
+    stage('') {
+      steps {
+        sh '''ssh -i "wpj_USER.pem" ubuntu@ec2-35-171-225-126.compute-1.amazonaws.com
+sudo git clone https://github.com/WesJohnson-wrk/index_test.git
+sudo cp -r index_test/* .
+#sudo systemctl start apache2
+ID=$(curl http://169.254.169.254/latest/meta-data/instance-id)
+sudo sed -i "s/_ID/$ID/" /var/www/html/index.html
+AZ=$(curl http://169.254.169.254/latest/meta-data/placement/availability-zone)
+sudo sed -i "s/_AZ/$AZ/" /var/www/html/index.html
+'''
+      }
+    }
+
   }
 }
