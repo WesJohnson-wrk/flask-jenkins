@@ -7,8 +7,19 @@ pipeline {
   }
   stages {
     stage('Git') {
-      steps {
-        git(url: 'https://github.com/WesJohnson-wrk/flask-jenkins', branch: 'main')
+      parallel {
+        stage('Git') {
+          steps {
+            git(url: 'https://github.com/WesJohnson-wrk/flask-jenkins', branch: 'main')
+          }
+        }
+
+        stage('Git2') {
+          steps {
+            git(url: 'https://github.com/WesJohnson-wrk/blue_ocean', branch: 'main')
+          }
+        }
+
       }
     }
 
