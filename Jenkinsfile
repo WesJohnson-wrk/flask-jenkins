@@ -33,6 +33,10 @@ pipeline {
         sh 'sudo docker push wesjohnsondoc/flask-jenkins'
       }
     }
-
+    stage('Docker run') {
+      steps {
+        sh 'docker container run -d -p 3030:3000 wesjohnsondoc/flask-jenkins'
+      }
+    }
   }
 }
