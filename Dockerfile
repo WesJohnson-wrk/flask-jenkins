@@ -1,7 +1,7 @@
 FROM python:3.9.12-buster
 
-ENV FLASK_APP='app.py'
-ENV FLASK_ENV='development'
+#ENV FLASK_APP='app.py'
+#ENV FLASK_ENV='development'
 
 WORKDIR /app
 
