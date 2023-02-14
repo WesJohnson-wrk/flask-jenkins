@@ -16,9 +16,11 @@ pipeline {
       }
     }
 
-    stage('Build') {
+    stage('Build Image') {
       steps {
-        sh 'docker build -t wesjohnsondoc/flask-jenkins .'
+        script {
+          docker.build('flask-app:latest')
+        }
       }
     }
 
