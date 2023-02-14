@@ -28,7 +28,7 @@ pipeline {
     }
     stage('Build Image') {
       steps {
-        sh 'sudo docker image build -t wesjohnsondoc/flask-jenkins .'
+        sh 'sudo docker build -t wesjohnsondoc/flask-jenkins .'
       }
     }
 
@@ -45,7 +45,7 @@ pipeline {
     }
     stage('Docker run') {
       steps {
-        sh 'sudo docker container run -d -p 80:5000 --name flask-jenkins-c wesjohnsondoc/flask-jenkins'
+        sh 'sudo docker run -d -p 5000:5000 --name flask-jenkins-c wesjohnsondoc/flask-jenkins'               
       }
     }
   }
