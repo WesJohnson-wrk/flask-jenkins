@@ -35,7 +35,7 @@ pipeline {
     }
     stage('Docker run') {
       steps {
-        sh 'sudo docker container run -d -p 5000:5000 wesjohnsondoc/flask-jenkins --name flask-jenkins-c'
+        sh 'sudo docker container run -d -p 5000:5000 --name flask-jenkins-c wesjohnsondoc/flask-jenkins'
       }
     }
   }
