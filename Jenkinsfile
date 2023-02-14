@@ -18,7 +18,13 @@ pipeline {
     
     stage('Stop container') {
       steps {
-        sh 'sudo docker stop flask-jenkins-c'
+        sh 'sudo docker stop flask-jenkins-c
+            sudo docker container prune -f'
+      }
+    }
+    stage('Prune container') {
+      steps {
+        sh 'sudo docker container prune -f'
       }
     }
     stage('Build Image') {
