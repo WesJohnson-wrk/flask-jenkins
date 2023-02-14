@@ -18,7 +18,7 @@ pipeline {
     
     stage('Stop container') {
       steps {
-        sh 'sudo docker stop wesjohnson/flask-jenkins-c'
+        sh 'sudo docker stop wesjohnsondoc/flask-jenkins-c'
       }
     }
     stage('Build Image') {
