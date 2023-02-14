@@ -18,7 +18,7 @@ pipeline {
 
     stage('Build Image') {
       steps {
-        sh 'sudo docker image build -t flask-jenkins .'
+        sh 'sudo docker image build -t wesjohnsondoc/flask-jenkins .'
       }
     }
 
