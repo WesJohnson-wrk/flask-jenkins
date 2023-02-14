@@ -24,13 +24,13 @@ pipeline {
 
     stage('Docker login') {
       steps {
-        sh 'docker login -u wesjohnsondoc -p dckr_pat_-t5dQyMVNe7BLiT6aGxXRAW--2k'
+        sh 'sudo docker login -u wesjohnsondoc -p dckr_pat_-t5dQyMVNe7BLiT6aGxXRAW--2k'
       }
     }
 
     stage('Docker push') {
       steps {
-        sh 'docker push wesjohnsondoc/flask-jenkins'
+        sh 'sudo docker push wesjohnsondoc/flask-jenkins'
       }
     }
 
