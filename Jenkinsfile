@@ -15,7 +15,12 @@ pipeline {
         }
       }
     }
-
+    
+    stage('Stop container') {
+      steps {
+        sh 'sudo docker stop wesjohnson/flask-jenkins-c'
+      }
+    }
     stage('Build Image') {
       steps {
         sh 'sudo docker image build -t wesjohnsondoc/flask-jenkins .'
