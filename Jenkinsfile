@@ -6,15 +6,15 @@ pipeline {
 
   }
   stages {
-    // stage('Git') {
-    //   parallel {
-    //     stage('Git') {
-    //       steps {
-    //         git(url: 'https://github.com/WesJohnson-wrk/flask-jenkins', branch: 'main')
-    //       }
-    //     }
-    //   }
-    // }
+    stage('Git') {
+      parallel {
+        stage('Git') {
+          steps {
+            git(url: 'https://github.com/WesJohnson-wrk/flask-jenkins', branch: 'main')
+          }
+        }
+      }
+    }
     
     stage('Stop container') {
       steps {
